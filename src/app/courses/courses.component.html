@@ -1,16 +1,7 @@
 <div class="row">
-    <div class="card m-2 col col-md-3" style="width: 30%;" *ngFor="let course of courseList">
-        <img class="card-img-top" src="{{course.image}}" alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title">{{course.title}}</h5>
-            <p class="card-text">{{course.description}}</p>
-            <a href="#" class="btn btn-primary">More info</a>
-        </div>
-
-    </div>
     <div class="row p-4">
         <div class="dropdown col">
-            <button class="btn btn-secondary  dropdown-toggle" type="button" data-toggle="dropdown"
+            <button class="btn btn-primary  dropdown-toggle" type="button" data-toggle="dropdown"
                     (click)="dropdownClicked()">
                 SORT BY
             </button>
@@ -20,7 +11,7 @@
             </div>
         </div>
         <div class="dropdown col">
-            <button class="btn btn-secondary  dropdown-toggle" type="button" data-toggle="dropdown"
+            <button class="btn btn-primary  dropdown-toggle" type="button" data-toggle="dropdown"
                     (click)="dropdownClicked()">
                 FILTER BY
             </button>
@@ -29,6 +20,15 @@
                    (click)="onFilterItemClicked(filterOption)">{{filterOption}}</a>
             </div>
         </div>
+    </div>
+    <div class="card m-2 col col-md-3" style="width: 30%;" *ngFor="let course of courseList">
+        <img class="card-img-top" src="{{course.image}}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{course.title}}</h5>
+            <p class="card-text">{{course.description}}</p>
+            <a href="#" class="btn btn-primary">More info</a>
+        </div>
+
     </div>
 
 </div>
