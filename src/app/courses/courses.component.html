@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="card m-2 col col-md-3" style="width: 30%;" *ngFor="let course of courseList">
+        <img class="card-img-top" src="{{course.image}}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{course.title}}</h5>
+            <p class="card-text">{{course.description}}</p>
+            <a href="#" class="btn btn-primary">More info</a>
+        </div>
+
+    </div>
+    <div class="row p-4">
+        <div class="dropdown col">
+            <button class="btn btn-secondary  dropdown-toggle" type="button" data-toggle="dropdown"
+                    (click)="dropdownClicked()">
+                SORT BY
+            </button>
+            <div *ngIf="isDropdownVisible" class="dropdown" style="width: 150px" id="dropdownItem">
+                <a class="dropdown-item" href="#" id="title" *ngFor="let sortOption of sortOptionItems"
+                   (click)="onSortItemClicked(sortOption)">{{sortOption}}</a>
+            </div>
+        </div>
+        <div class="dropdown col">
+            <button class="btn btn-secondary  dropdown-toggle" type="button" data-toggle="dropdown"
+                    (click)="dropdownClicked()">
+                FILTER BY
+            </button>
+            <div *ngIf="isDropdownVisible" class="dropdown" style="width: 150px">
+                <a class="dropdown-item" href="#" *ngFor="let filterOption of filterOptionItems"
+                   (click)="onFilterItemClicked(filterOption)">{{filterOption}}</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
