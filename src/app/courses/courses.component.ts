@@ -11,9 +11,10 @@ export class CoursesComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        // this.courseList = this.filteredList;
     }
 
+    sortOptionItems = ["Title", "Teacher", "Rate"]
+    filterOptionItems = ["javaScript", "html"]
     isDropdownVisible: boolean = false;
     courseList = [
         {
@@ -58,6 +59,7 @@ export class CoursesComponent implements OnInit {
     sortedList = this.courseList;
     filteredList = this.courseList;
 
+
     dropdownClicked() {
         this.isDropdownVisible = !this.isDropdownVisible;
         console.log(this.isDropdownVisible)
@@ -66,15 +68,12 @@ export class CoursesComponent implements OnInit {
     onSortItemClicked(sortOption: string) {
         this.sortedList = this.courseList.sort((a, b) =>
             a.title.localeCompare(b.title));
-        this.courseList = this.sortedList;
+        ///////
+        if (this.sortedList.length)
+            this.courseList = this.sortedList;
         // a.{sortOption.toLowerCase()}.localeCompare(b.{sortOption.toLowerCase()}));
-        console.log(this.sortedList)
-        console.log(sortOption.toLowerCase())
-        // console.log(`b.${sortOption.toLowerCase()}`)
     }
 
-    sortOptionItems = ["Title", "Teacher", "Rate"]
-    filterOptionItems = ["javaScript", "html"]
 
     onFilterItemClicked(filterOption: string) {
         this.filteredList = this.courseList.filter(course => course.title.toLowerCase().includes(filterOption.toLowerCase()));
@@ -88,7 +87,6 @@ export class CourseList {
     releaseDate?: number;
     image?: string;
     description?: string;
-
 }
 
 
