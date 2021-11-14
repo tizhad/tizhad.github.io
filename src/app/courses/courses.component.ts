@@ -1,4 +1,4 @@
-import {Component, OnInit} from "@angular/core";
+import {Component, ElementRef, HostListener, OnInit} from "@angular/core";
 
 @Component({
     selector: "app-courses",
@@ -7,12 +7,18 @@ import {Component, OnInit} from "@angular/core";
 })
 export class CoursesComponent implements OnInit {
 
-    constructor() {
+    @HostListener('document:click', ['$event'])
+    clickedOutsideListener(event: Event) {
+        if (this.isOutside(event)) {
+            this.showFilterDropdown = false;
+            this.showSortDropdown = false;
+        }
+    }
 
+    constructor(private el: ElementRef) {
     }
 
     ngOnInit(): void {
-        console.log("ngOnInit", this.courseList)
     }
 
     sortOptionItems = ["Title", "Teacher", "Rate"]
@@ -24,7 +30,7 @@ export class CoursesComponent implements OnInit {
             title: "CSS best course",
             teacher: "c",
             description: " This is great course that you need.",
-            image: "https://images.photowall.com/products/46379/andromeda-galaxy.jpg?h=699&q=85",
+            image: "https://www.wphandleiding.nl/wp-content/uploads/2021/06/overbodige-css-in-wordpress-scaled.jpg",
             rate: 4
 
         },
@@ -32,14 +38,14 @@ export class CoursesComponent implements OnInit {
             title: "javaScript best course",
             teacher: "a",
             description: " This is great course that you need.",
-            image: "https://scx2.b-cdn.net/gfx/news/2019/galaxy.jpg",
+            image: "https://www.techzine.nl/wp-content/uploads/2021/07/shutterstock_1062509657-scaled.jpg",
             rate: 2
         },
         {
             title: "Security",
             teacher: "c",
             description: " This is great course that you need.",
-            image: "https://images.photowall.com/products/46379/andromeda-galaxy.jpg?h=699&q=85",
+            image: "http://www.tiempo-secure.com/wp-content/uploads/Page_Home_396946494.jpg",
             rate: 2
 
         },
@@ -47,14 +53,14 @@ export class CoursesComponent implements OnInit {
             title: "HTML best course",
             teacher: "b",
             description: " This is great course that you need.",
-            image: "https://images.photowall.com/products/46379/andromeda-galaxy.jpg?h=699&q=85",
+            image: "https://www.oxfordwebstudio.com/user/pages/06.da-li-znate/sta-je-html/sta-je-html.jpg",
             rate: 5
         },
         {
             title: "CSS best course",
             teacher: "c",
             description: " This is great course that you need.",
-            image: "https://images.photowall.com/products/46379/andromeda-galaxy.jpg?h=699&q=85",
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQ-oIpN0ZXDoxXzoGGQsoMXf7ECNIH_E08eQ&usqp=CAU",
             rate: 4
 
         },
@@ -79,6 +85,11 @@ export class CoursesComponent implements OnInit {
     //Show all courses
     resetFilter() {
         this.filteredList = this.courseList
+    }
+
+    private isOutside(event: Event): boolean {
+        console.log("isOutside", event, this.el)
+        return !this.el.nativeElement.contains(event.target);
     }
 }
 
