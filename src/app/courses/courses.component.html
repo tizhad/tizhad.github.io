@@ -2,34 +2,35 @@
     <div class="row p-4">
         <div class="dropdown col">
             <button class="btn btn-primary  dropdown-toggle" type="button" data-toggle="dropdown"
-                    (click)="dropdownClicked()">
+                    (click)="showSortDropdown = !showSortDropdown">
                 SORT BY
             </button>
-            <div *ngIf="isDropdownVisible" class="dropdown" style="width: 150px" id="dropdownItem">
+            <div *ngIf="showSortDropdown" class="dropdown" style="width: 150px" id="dropdownItem">
                 <a class="dropdown-item" href="#" id="title" *ngFor="let sortOption of sortOptionItems"
-                   (click)="onSortItemClicked(sortOption)">{{sortOption}}</a>
+                   (click)="sortList(sortOption)">{{sortOption}}</a>
             </div>
         </div>
         <div class="dropdown col">
-            <button class="btn btn-primary  dropdown-toggle" type="button" data-toggle="dropdown"
-                    (click)="dropdownClicked()">
+            <button class="btn btn-primary  dropdown-toggle m-2" type="button" data-toggle="dropdown"
+                    (click)="showFilterDropdown = !showFilterDropdown">
                 FILTER BY
             </button>
-            <div *ngIf="isDropdownVisible" class="dropdown" style="width: 150px">
+            <div class="dropdown" style="width: 150px" *ngIf="showFilterDropdown">
                 <a class="dropdown-item" href="#" *ngFor="let filterOption of filterOptionItems"
-                   (click)="onFilterItemClicked(filterOption)">{{filterOption}}</a>
+                   (click)="filterList(filterOption)"
+                >{{filterOption}}</a>
             </div>
         </div>
+        <button class="btn btn-primary" type="button" (click)="resetFilter()"> Show All</button>
+
     </div>
-    <div class="card m-2 col col-md-3" style="width: 30%;" *ngFor="let course of courseList">
+    <div class="card m-2 col col-md-2" *ngFor="let course of filteredList">
         <img class="card-img-top" src="{{course.image}}" alt="Card image cap">
         <div class="card-body">
             <h5 class="card-title">{{course.title}}</h5>
             <p class="card-text">{{course.description}}</p>
             <a href="#" class="btn btn-primary">More info</a>
         </div>
-
     </div>
-
 </div>
 

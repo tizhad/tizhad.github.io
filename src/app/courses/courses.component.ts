@@ -8,14 +8,17 @@ import {Component, OnInit} from "@angular/core";
 export class CoursesComponent implements OnInit {
 
     constructor() {
+
     }
 
     ngOnInit(): void {
+        console.log("ngOnInit", this.courseList)
     }
 
     sortOptionItems = ["Title", "Teacher", "Rate"]
-    filterOptionItems = ["javaScript", "html"]
-    isDropdownVisible: boolean = false;
+    filterOptionItems = ["JavaScript", "Html", "Security"]
+    showFilterDropdown: boolean = false;
+    showSortDropdown: boolean = false;
     courseList = [
         {
             title: "CSS best course",
@@ -56,30 +59,29 @@ export class CoursesComponent implements OnInit {
 
         },
     ];
-    sortedList = this.courseList;
     filteredList = this.courseList;
 
-
-    dropdownClicked() {
-        this.isDropdownVisible = !this.isDropdownVisible;
-        console.log(this.isDropdownVisible)
-    }
-
-    onSortItemClicked(sortOption: string) {
-        this.sortedList = this.courseList.sort((a, b) =>
-            a.title.localeCompare(b.title));
-        ///////
-        if (this.sortedList.length)
-            this.courseList = this.sortedList;
-        // a.{sortOption.toLowerCase()}.localeCompare(b.{sortOption.toLowerCase()}));
-    }
-
-
-    onFilterItemClicked(filterOption: string) {
+    filterList(filterOption: string) {
         this.filteredList = this.courseList.filter(course => course.title.toLowerCase().includes(filterOption.toLowerCase()));
-        this.courseList = this.filteredList;
+        if (this.filteredList.length === 0) {
+            this.filteredList = this.courseList
+        }
+    }
+
+    sortList(sortOption: string) {
+        this.filteredList = this.courseList.sort((a, b) =>
+            a.title.localeCompare(b.title));
+        if (this.filteredList.length === 0)
+            alert("چیزی برای نمایش وجود ندارد.")
+    }
+
+
+    //Show all courses
+    resetFilter() {
+        this.filteredList = this.courseList
     }
 }
+
 
 export class CourseList {
     title?: string;
@@ -88,5 +90,4 @@ export class CourseList {
     image?: string;
     description?: string;
 }
-
 
