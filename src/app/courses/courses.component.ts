@@ -27,6 +27,7 @@ export class CoursesComponent implements OnInit {
     showSortDropdown: boolean = false;
     courseList = [
         {
+            id: 1,
             title: "CSS best course",
             teacher: "c",
             description: " This is great course that you need.",
@@ -35,6 +36,7 @@ export class CoursesComponent implements OnInit {
 
         },
         {
+            id: 2,
             title: "javaScript best course",
             teacher: "a",
             description: " This is great course that you need.",
@@ -42,6 +44,7 @@ export class CoursesComponent implements OnInit {
             rate: 2
         },
         {
+            id: 3,
             title: "Security",
             teacher: "c",
             description: " This is great course that you need.",
@@ -50,6 +53,7 @@ export class CoursesComponent implements OnInit {
 
         },
         {
+            id: 4,
             title: "HTML best course",
             teacher: "b",
             description: " This is great course that you need.",
@@ -57,6 +61,7 @@ export class CoursesComponent implements OnInit {
             rate: 5
         },
         {
+            id: 5,
             title: "CSS best course",
             teacher: "c",
             description: " This is great course that you need.",
