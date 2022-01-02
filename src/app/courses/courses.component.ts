@@ -6,6 +6,9 @@ import {Component, ElementRef, HostListener, OnInit} from "@angular/core";
     styleUrls: ["./courses.component.scss"],
 })
 export class CoursesComponent implements OnInit {
+    createCourseMsg: string = "No course created!"
+    courseName : any = '';
+    courseStatus: string = '';
 
     @HostListener('document:click', ['$event'])
     clickedOutsideListener(event: Event) {
@@ -15,11 +18,30 @@ export class CoursesComponent implements OnInit {
         }
     }
 
+    allowAddCourse: boolean = false;
+
     constructor(private el: ElementRef) {
+        setTimeout(() =>{
+            this.allowAddCourse = true
+        },4000);
+
+        this.courseStatus = Math.random() < 0.5 ? 'Rejected' : 'Accepted;'
     }
 
     ngOnInit(): void {
     }
+
+    onCreateCourse(){
+        this.createCourseMsg = "Course created! Yoohoo!"
+    }
+    onUpdateName(event: any){
+        this.courseName = event.target.value;
+    }
+
+    getCourseStatusColor(){
+        return this.courseStatus === 'Rejected'? 'red' : 'green';
+    }
+
 
     sortOptionItems = ["Title", "Teacher", "Rate"]
     filterOptionItems = ["JavaScript", "Html", "Security"]
