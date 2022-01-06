@@ -10,6 +10,9 @@ import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component
 import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
 import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
+import { CourseComponent } from './courses/course/course.component';
+import { CourseListComponent } from './courses/course-list/course-list.component';
+import { NewCourseComponent } from './courses/new-course/new-course.component';
 
 @NgModule({
     declarations: [
@@ -20,6 +23,9 @@ import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-ed
         RecipeDetailComponent,
         RecipeItemComponent,
         ShoppingEditComponent,
+        CourseComponent,
+        CourseListComponent,
+        NewCourseComponent,
     ],
     imports: [
         BrowserModule,

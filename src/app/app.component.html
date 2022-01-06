@@ -1,15 +1,12 @@
-<div class="row">
-    <app-header></app-header>
+<div>
+    <app-new-course (courseAdded) = 'onCourseAdded($event)'></app-new-course>
 </div>
+
 <div class="row">
-    <div class="col-6">
-        <app-recipe-list></app-recipe-list>
-    </div>
-    <div class="col-6">
-        <app-recipe-detail></app-recipe-detail>
-    </div>
-    <div class="row">
-        <app-shopping-list></app-shopping-list>
+    <div class="col-md-3">
+        <app-course *ngFor="let course of courseList"
+                    [courseElement] = "course"></app-course>
     </div>
 
 </div>
+
