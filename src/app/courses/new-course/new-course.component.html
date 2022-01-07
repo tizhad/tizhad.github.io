@@ -1,16 +1,19 @@
-<form class="m-2">
+<div class="row m-2">
     <div class="form-group">
-        <label for="title">Course Name</label>
-        <input type="email" class="form-control" id="title" aria-describedby="emailHelp" placeholder="Enter Title">
+        <label>Course Name</label>
+        <input type="text" class="form-control" aria-describedby="emailHelp"
+        [(ngModel)]="newCourseName">
     </div>
     <div class="form-group">
-        <label for="description">description</label>
-        <input type="text" class="form-control" id="description" placeholder="Enter Description">
+        <label>description</label>
+        <input type="text" class="form-control"
+        [(ngModel)]="newCourseDescription">
     </div>
 
     <div class="form-group">
-        <label for="rate">Rate</label>
-        <input type="number" class="form-control" id="rate" placeholder="Enter Rate">
+        <label>Rate</label>
+        <input [(ngModel)]="newCourseRate" type="number" class="form-control"
+        >
     </div>
-    <button type="submit" class="btn btn-primary m-2" (click)="onNewCourseAdded()">Add Course</button>
-</form>
+    <button type="submit" class="btn btn-primary m-2 col-2" (click)="onNewCourseAdded()">Add Course</button>
+</div>

@@ -19,7 +19,5 @@ export class AppComponent {
       description: newCourseData.description,
       rate: newCourseData.rate
     })
-    console.log("onCourseAdded called", this.courseList)
-    console.log("onCourseAdded called", newCourseData)
   }
 }
