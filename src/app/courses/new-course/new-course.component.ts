@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, ElementRef, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-new-course',
@@ -7,18 +7,21 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 })
 export class NewCourseComponent implements OnInit {
   @Output() courseAdded = new EventEmitter<{name: string, description: string, rate: number}>();
+  @ViewChild('courseName') newCourseName : ElementRef;
+  @ViewChild('courseDescription') courseDescription : ElementRef;
+  @ViewChild('courseRate') courseRate : ElementRef;
 
-  newCourseName: string;
-  newCourseDescription: string;
-  newCourseRate: number;
+  // newCourseName: string;
+  // newCourseDescription: string;
+  // newCourseRate: number;
 
   constructor() { }
 
   onNewCourseAdded(){
     this.courseAdded.emit({
-      name: this.newCourseName,
-      description: this.newCourseDescription,
-      rate: this.newCourseRate
+      name: this.newCourseName.nativeElement.value,
+      description: this.courseDescription.nativeElement.value,
+      rate: this.courseRate.nativeElement.value
     })
   }
 
