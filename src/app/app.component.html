@@ -5,7 +5,9 @@
 <div class="row">
     <div class="col-md-3">
         <app-course *ngFor="let course of courseList"
-                    [courseElement] = "course"></app-course>
+                    [courseElement] = "course">
+            <h5 [ngClass]="{test : course.name === 'Test'}" class="card-title">{{course.name}}</h5>
+        </app-course>
     </div>
 
 </div>
