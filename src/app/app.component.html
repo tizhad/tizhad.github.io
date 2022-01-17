@@ -1,14 +1,2 @@
-<div>
-    <app-new-course (courseAdded) = 'onCourseAdded($event)'></app-new-course>
-</div>
-
-<div class="row">
-    <div class="col-md-3">
-        <app-course *ngFor="let course of courseList"
-                    [courseElement] = "course">
-            <h5 [ngClass]="{test : course.name === 'Test'}" class="card-title">{{course.name}}</h5>
-        </app-course>
-    </div>
-
-</div>
-
+<app-header></app-header>
+<router-outlet></router-outlet>
