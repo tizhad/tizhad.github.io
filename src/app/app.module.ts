@@ -13,6 +13,8 @@ import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-ed
 import { CourseComponent } from './courses/course/course.component';
 import { CourseListComponent } from './courses/course-list/course-list.component';
 import { NewCourseComponent } from './courses/new-course/new-course.component';
+import { CourseDetailComponent } from './courses/course-detail/course-detail.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
     declarations: [
@@ -26,6 +28,8 @@ import { NewCourseComponent } from './courses/new-course/new-course.component';
         CourseComponent,
         CourseListComponent,
         NewCourseComponent,
+        CourseDetailComponent,
+        HomeComponent,
     ],
     imports: [
         BrowserModule,
