@@ -1,10 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-//
-// export class CourseDefinition {
-//   title: string;
-//   author: string;
-//   rate: number
-// }
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-course',
@@ -12,9 +7,14 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./course.component.scss']
 })
 export class CourseComponent implements OnInit {
-  @Input() courseElement: {name: string, description: string, rate: number};
+  @Input() courseElement: {id: number, name: string, description: string, rate: number};
 
-  constructor() { }
+
+  constructor(private router: Router) { }
+
+  navigateToDetail(){
+    this.router.navigate(['course-detail'])
+  }
 
   ngOnInit(): void {
   }
