@@ -8,7 +8,7 @@ import {NewCourseComponent} from "./courses/new-course/new-course.component";
 
 const appRoutes: Routes = [
     {path: '', component: HomeComponent},
-    {path: 'course-detail/:id', component: CourseDetailComponent},
+    {path: 'course/:id', component: CourseDetailComponent},
     {path: 'courses', component: CourseListComponent},
     {path: 'new-course', component: NewCourseComponent},
     {path: 'join-us', component: NewCourseComponent},
