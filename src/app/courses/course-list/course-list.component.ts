@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CourseListComponent implements OnInit {
   courseList = [
-    {id: 1, name: 'The Web Developer Bootcamp 2022', description: 'Good', rate: 4},
+    {id: 1, name: 'test', description: 'Good', rate: 4},
     {id: 2, name: 'HTML & CSS', description: 'Awesome', rate: 4.2},
     {id: 3, name: 'Javascript 2021', description: 'Awesome', rate: 4}
   ];

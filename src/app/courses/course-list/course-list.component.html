@@ -1,5 +1,6 @@
 <app-course *ngFor="let course of courseList"
-            routerLink="/course-detail/{{course.id}}">
+[courseElement]="course"
+[routerLink]="['/course', course.id]">
     <h5 [ngClass]="{test : course.name === 'Test'}" class="card-title">{{course.name}}</h5>
 </app-course>
 <div>
