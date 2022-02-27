@@ -1,33 +1,29 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light mb-2 p-2">
-    <a class="navbar-brand" href="#">JobGuru</a>
-    <button class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" routerLink="/" routerLinkActive="active"
-                [routerLinkActiveOptions]="{exact: true}">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link">Features</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link">Pricing</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/courses']">Courses</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/join-us']">Join Us</a>
-            </li>
-        </ul>
+<nav id="app-top-navbar">
+    <div class="navbar navbar-expand-lg">
+        <div id="navbar-brand" class="collapse navbar-collapse menu-area">
+            <strong>Tizhad</strong>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/" routerLinkActive="active"
+                            [routerLinkActiveOptions]="{exact: true}">خانه</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link">مقالات</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" [routerLink]="['/growth-path']">معرفی کتاب</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" [routerLink]="['/courses']">دوره های رایگان</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" [routerLink]="['/join-us']">ارتباط با ما</a>
+                        </li>
+                    </ul>
+                </div>
+
     </div>
 </nav>
 

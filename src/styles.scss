@@ -1,5 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.min.css";
 
+$pink: #cf92b7;
+$green: #59876b;
+$grey: #4a4a4a;
 body {
+padding: 24px;
+  background-color: white;
+  //font-family: "Noto Sans Inscriptional Pahlavi";
+  font-family: "Al Bayan";
 }
+
+h1 {
+  color: $pink;
+}
+
